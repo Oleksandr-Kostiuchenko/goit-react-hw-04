@@ -1,0 +1,13 @@
+.imageList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* .imageItem {
+  width: 200px;
+  height: 100px;
+} */

@@ -1,0 +1,13 @@
+.headerWrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.userInput {
+  width: 250px;
+}

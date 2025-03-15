@@ -113,3 +113,25 @@ input {
 }
 
 /* ================= /RESET & BASE ================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  border: none;
+  outline: none;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: hidden;
+  border-radius: 8px;
+}
