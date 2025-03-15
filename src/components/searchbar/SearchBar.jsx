@@ -1,4 +1,9 @@
 import style from "./SearchBar.module.css";
+import toast, { Toaster } from "react-hot-toast";
+
+import { motion } from "framer-motion";
+
+import { FiSearch } from "react-icons/fi";
 
 const SearchBar = ({ onSearch }) => {
   const handleSubmit = (event) => {
@@ -8,7 +13,10 @@ const SearchBar = ({ onSearch }) => {
     const input = form.elements.galleryUserQuery;
 
     if (input.value.trim() === "") {
-      alert("Please enter something!");
+      // alert("Please enter something!");
+      toast("Please enter something!", {
+        icon: "📌",
+      });
       return;
     }
 
@@ -17,19 +25,29 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <header className={style.headerWrapper}>
+    <motion.div
+      className={style.headerWrapper}
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <form className={style.formWrapper} onSubmit={handleSubmit}>
         <input
           className={style.userInput}
           name="galleryUserQuery"
           type="text"
           autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
+          maxLength="30"
+          placeholder="Images..."
         />
-        <button type="submit">Search</button>
+        <FiSearch className={style.searchIcon} />
+        <button className={style.searchBtn} type="submit">
+          Search
+        </button>
       </form>
-    </header>
+      <Toaster position="top-right" reverseOrder={false} />
+    </motion.div>
   );
 };
 

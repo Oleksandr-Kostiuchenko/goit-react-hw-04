@@ -41,15 +41,20 @@ img {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #ffffff;
-  /* background-image: url(/public/grainy.png); */
-  /* box-shadow: inset 0px 0px 30px -8px rgb(20, 20, 20); */
+  /* background-color: #ffffff; */
+  background-color: #cee5e7;
+
+  box-shadow: inset 0px 0px 300px -56px rgba(104, 197, 204, 1);
   color: #000;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -124,6 +129,14 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear, visibility 0.3s linear;
+}
+
+.overlayIsOpen {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal {
@@ -134,4 +147,10 @@ input {
   max-height: 80%;
   overflow: hidden;
   border-radius: 8px;
+  transform: scale(0.8);
+  transition: transform 0.3s linear;
+}
+
+.modalIsOpen {
+  transform: scale(1);
 }

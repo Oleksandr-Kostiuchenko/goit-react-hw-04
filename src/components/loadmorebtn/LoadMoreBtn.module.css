@@ -1,0 +1,43 @@
+.loadMoreBtn {
+  width: 150px;
+  height: 40px;
+  border-radius: 9000px;
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  color: #111;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  transition: background-color 250ms linear, color 250ms linear,
+    transform 250ms linear;
+}
+
+.loadMoreBtn:hover {
+  background-color: #111;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.arrowIcon {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 30px;
+  height: 30px;
+}
+
+.btnWrapper {
+  margin-bottom: 150px;
+}

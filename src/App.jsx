@@ -72,10 +72,6 @@ function App() {
     getGalleryData();
   }, [userQuery, page]);
 
-  // const search = async () => {
-  //   const response = await FetchImages("car", 1);
-  // };
-
   return (
     <>
       <SearchBar onSearch={handleSearch} />
@@ -89,11 +85,13 @@ function App() {
       {galleryData.length > 0 && (
         <LoadMoreBtn handleLoadMore={handleLoadMore} />
       )}
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className="modal"
-        overlayClassName="overlay"
+        className={`modal ${modalIsOpen ? "modalIsOpen" : ""}`}
+        overlayClassName={`overlay ${modalIsOpen ? "overlayIsOpen" : ""}`}
+        closeTimeoutMS={300}
       >
         {modalIsOpen && <ImageModal modalImage={modalImage} />}
       </Modal>
