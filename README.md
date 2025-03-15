@@ -1,1 +1,5 @@
-# goit-react-hw-04
+# Image gallery
+
+Create an app for image searching basing on user query.
+
+Utilize Unsplash API
