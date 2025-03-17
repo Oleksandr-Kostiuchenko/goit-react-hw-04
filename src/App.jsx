@@ -13,6 +13,10 @@ import ImageModal from "./components/imagemodal/ImageModal";
 import Modal from "react-modal";
 Modal.setAppElement("#root");
 
+import LangSwitcher from "./components/langswitcher/LangSwitcher";
+
+import { IoMenuSharp } from "react-icons/io5";
+
 //* Import fetch function
 import { FetchImages } from "./FetchImages";
 
@@ -26,6 +30,8 @@ function App() {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalImage, setModalImage] = useState();
+
+  const [langModalIsOpen, setLangModalIsOpen] = useState(false);
 
   const openModal = (imageData) => {
     setModalImage(imageData);
@@ -74,7 +80,22 @@ function App() {
 
   return (
     <>
-      <SearchBar onSearch={handleSearch} />
+      <header>
+        <SearchBar onSearch={handleSearch} />
+        <button
+          className="menu-btn"
+          onClick={() => {
+            setLangModalIsOpen(true);
+          }}
+        >
+          <IoMenuSharp className="menu-icon" />
+        </button>
+      </header>
+
+      {langModalIsOpen && (
+        <LangSwitcher setLangModalIsOpen={setLangModalIsOpen} />
+      )}
+
       {galleryData.length > 0 && (
         <ImageGallery galleryArr={galleryData} openModal={openModal} />
       )}

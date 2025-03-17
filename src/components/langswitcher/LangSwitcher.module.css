@@ -1,0 +1,83 @@
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 343px;
+  height: 276px;
+  background-color: #ffffff;
+
+  border: 1px solid rgba(250, 250, 250, 0.1);
+  border-radius: 20px;
+
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    min-width: 495px;
+    height: 246px;
+    padding: 64px;
+  }
+}
+
+.closeModalBtn {
+  width: 22px;
+  height: 22px;
+
+  border: none;
+  outline: none;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  background-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+.selectWrapper {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.langSelector {
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
